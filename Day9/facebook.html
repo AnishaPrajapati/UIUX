@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FaceBook Page </title>
+
+
+    <!-- Font Awesome cdn -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        html,
+        body {
+            font-size: 16px;
+            font-family: Poppins, sans-serif;
+            background-color: #f2f4f7;
+            position: relative;
+        }
+        
+        button {
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: 1px solid gray;
+        }
+        
+        img {
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        header {
+            position: sticky;
+            top: 0;
+        }
+        
+        nav {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 12px 24px;
+            background-color: white;
+        }
+        
+        .nav_left {
+            display: flex;
+            flex-direction: row;
+            gap: 12px;
+            align-items: center;
+            width: 20%;
+        }
+        
+        .nav_left i {
+            font-size: 36px;
+            color: #0064d1;
+        }
+        
+        .search_input {
+            padding: 8px 12px;
+            border-radius: 12px;
+            border: 1px solid grey;
+        }
+        
+        .nav_menu_list {
+            width: 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .nav_menu_list ul {
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+            gap: 16px;
+            justify-content: space-between;
+            width: 100%;
+        }
+        
+        .nav_menu_list ul i {
+            font-size: 24px;
+            color: grey;
+        }
+        
+        .nav_right {
+            width: 20%;
+        }
+        
+        .nav_right ul {
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+            gap: 24px;
+            justify-content: end;
+        }
+        
+        .nav_right ul i {
+            font-size: 24px;
+            color: grey;
+        }
+        
+        .container {
+            display: flex;
+            width: 100%;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: start;
+            padding-top: 24px;
+        }
+        
+        .left_sidebar {
+            width: 20%;
+            padding: 16px 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .left_sidebar ul {
+            display: flex;
+            flex-direction: column;
+            list-style: none;
+            gap: 20px;
+            height: 100%;
+        }
+        
+        .left_sidebar ul li {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+        }
+        
+        .left_sidebar ul li i {
+            font-size: 20px;
+            color: #0064d1;
+        }
+        
+        .active-icon {
+            color: #0064d1 !important;
+            border-bottom: 2px solid #0064d1;
+        }
+        
+        .active-icon i {
+            color: #0064d1 !important;
+        }
+        
+        .center {
+            display: flex;
+            flex-direction: column;
+            /* flex-grow: 1; */
+            width: 40%;
+            padding: 0 24px;
+            gap: 16px;
+        }
+        
+        .on_your_mind {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 12px 24px;
+            background-color: white;
+            border: 1px solid gray;
+            border-radius: 8px;
+        }
+        
+        .on_your_mind_top {
+            display: flex;
+            flex-direction: row;
+            gap: 24px;
+        }
+        
+        .on_your_mind_top_avatar {
+            width: 32px;
+            height: 32px;
+            overflow: hidden;
+            border-radius: 50%;
+        }
+        
+        .on_your_mind_input {
+            flex-grow: 1;
+            background-color: #f2f4f7;
+            border: 1px solid gray;
+            border-radius: 12px;
+            padding: 8px 12px;
+        }
+        
+        .on_your_mind_bottom {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        
+        .on_your_mind_bottom_item {
+            display: flex;
+            flex-direction: row;
+            gap: 8px;
+            align-items: center;
+        }
+        
+        .on_your_mind_bottom_item i {
+            font-size: 24px;
+        }
+        
+        .stories {
+            display: flex;
+            flex-direction: row;
+            gap: 16px;
+            overflow-x: scroll;
+        }
+        
+        .story {
+            display: flex;
+            flex-direction: column;
+            background-color: aquamarine;
+            width: 100px;
+            height: 200px;
+            border-radius: 16px;
+            padding: 16px;
+        }
+        
+        .story_avatar {
+            width: 48px;
+            height: 48px;
+            overflow: hidden;
+            border-radius: 50%;
+            border: 4px solid #0064d1;
+        }
+        
+        .story_middle {
+            flex-grow: 1;
+        }
+        
+        .story_bottom {
+            color: white;
+        }
+        
+        .create_story {
+            display: flex;
+            flex-direction: column;
+            background-color: white;
+            width: 132px;
+            height: 232px;
+            border-radius: 16px;
+        }
+        
+        .create_story_top {
+            width: 100%;
+            border-radius: 16px;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            overflow: hidden;
+        }
+        
+        .create_story_bottom {
+            height: 30px;
+            display: flex;
+            align-items: end;
+            padding: 16px;
+        }
+        
+        .posts {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        
+        .post {
+            display: flex;
+            flex-direction: column;
+            background-color: white;
+            border-radius: 12px;
+            padding: 16px;
+        }
+        
+        .post_author {
+            display: flex;
+            flex-direction: row;
+            gap: 12px;
+        }
+        
+        .post_author_avatar {
+            width: 64px;
+            height: 64px;
+            overflow: hidden;
+            border-radius: 50%;
+        }
+        
+        .post_description {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .post_actions {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 12px 0;
+        }
+        
+        .right_sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            width: 20%;
+        }
+        
+        .friend-requests {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        
+        .friend-requests_title {
+            display: flex;
+            justify-content: space-around;
+        }
+        
+        .friend-requests_item {
+            display: flex;
+            flex-direction: row;
+            gap: 16px;
+            align-items: center;
+        }
+        
+        .friend_request_avatar {
+            width: 48px;
+            height: 48px;
+            overflow: hidden;
+            border-radius: 50%;
+        }
+        
+        .friend-requests_item_name {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .friend-requests_item_buttons {
+            display: flex;
+            flex-direction: row;
+            gap: 16px;
+        }
+        
+        .birthdays {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        
+        .birthday_item {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+        }
+        
+        .birthday_item i {
+            font-size: 24px;
+            color: #0064d1;
+        }
+        
+        .contacts {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        
+        .contact_items {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .contact_item {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .contact_item_avatar {
+            width: 36px;
+            height: 36px;
+            overflow: hidden;
+            border-radius: 50%;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div class="nav_left">
+                <i class="fa-brands fa-facebook"></i>
+                <!-- <button><i class="fa-solid fa-magnifying-glass"></i></button> -->
+                <input class="search_input" placeholder="Search facebook" />
+            </div>
+
+            <div class="nav_menu_list">
+                <ul>
+                    <li class="active-icon"><i class="fa-solid fa-house"></i></li>
+                    <li><i class="fa-solid fa-video"></i></li>
+                    <li><i class="fa-solid fa-store"></i></li>
+                    <li><i class="fa-solid fa-group-arrows-rotate"></i></li>
+                    <li><i class="fa-solid fa-gamepad"></i></li>
+                </ul>
+            </div>
+
+            <div class="nav_right">
+                <ul>
+                    <li><i class="fa-solid fa-bars"></i></li>
+                    <li><i class="fa-brands fa-facebook-messenger"></i></li>
+                    <li><i class="fa-solid fa-bell"></i></li>
+                    <li><i class="fa-solid fa-user"></i></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+
+    <main>
+        <div class="container">
+            <div class="left_sidebar">
+                <ul>
+                    <li><i class="fa-solid fa-user"></i> Anisha Prajapati</li>
+                    <li><i class="fa-solid fa-user-group"></i> Friends</li>
+                    <li><i class="fa-solid fa-clock"></i> Memories</li>
+                    <li><i class="fa-solid fa-bookmark"></i> Saved</li>
+                    <li><i class="fa-solid fa-people-group"></i> Groups</li>
+                    <li><i class="fa-solid fa-video"></i> Video</li>
+                    <li><i class="fa-solid fa-store"></i> Marketplace</li>
+                    <li> <i class="fa-solid fa-rss"></i>Feeds</li>
+                    <li> <i class="fa-solid fa-arrow-down"></i> See more</li>
+                </ul>
+                <hr>
+                <div class="left_sidebar_shortcuts">
+                    <h4 style="margin-bottom: 20px;">Your Shortcuts</h4>
+                    <ul>
+                        <li> <i class="fa-regular fa-image"></i>Candy Crush Saga</li>
+                        <li> <i class="fa-regular fa-image"></i>BIM Study Notes</li>
+                        <li> <i class="fa-regular fa-image"></i>UI/UX Community</li>
+                        <li> <i class="fa-regular fa-image"></i>Python Community</li>
+                        <li> <i class="fa-regular fa-image"></i>Java Community</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="center">
+                <div class="on_your_mind">
+                    <div class="on_your_mind_top">
+                        <div class="on_your_mind_top_avatar"><img src="https://images.unsplash.com/photo-1605643044751-13cdf50ced23?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Z2lybHMlMjBpbWFnZXN8ZW58MHx8MHx8fDA%3D" /></div>
+                        <input class="on_your_mind_input" placeholder="What's on your mind, Anisha?" />
+                    </div>
+                    <hr>
+                    <div class="on_your_mind_bottom">
+                        <div class="on_your_mind_bottom_item">
+                            <i class="fa-solid fa-video" style="color: red;"></i> Live Video
+                        </div>
+                        <div class="on_your_mind_bottom_item">
+                            <i class="fa-solid fa-photo-film" style="color: green;"></i> Photo/video
+                        </div>
+                        <div class="on_your_mind_bottom_item">
+                            <i class="fa-solid fa-face-smile" style="color: orange;"></i> Feeling/activity
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stories">
+                    <div class="create_story">
+                        <div class="create_story_top">
+                            <img src="https://images.unsplash.com/photo-1605369572399-05d8d64a0f6e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGdpcmxzJTIwaW1hZ2VzfGVufDB8fDB8fHww" />
+                        </div>
+                        <div class="create_story_bottom">Create story</div>
+                    </div>
+                    <div class="story" style="background-image: url(https://images.unsplash.com/photo-1519791883288-dc8bd696e667?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3Rvcnl8ZW58MHx8MHx8fDA%3D);">
+                        <div class="story_top">
+                            <div class="story_avatar"><img src="https://images.unsplash.com/photo-1605369572399-05d8d64a0f6e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGdpcmxzJTIwaW1hZ2VzfGVufDB8fDB8fHww" /></div>
+                        </div>
+                        <div class="story_middle"></div>
+                        <div class="story_bottom">John Doe</div>
+                    </div>
+                    <div class="story" style="background-image: url(https://images.unsplash.com/photo-1519791883288-dc8bd696e667?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3Rvcnl8ZW58MHx8MHx8fDA%3D);">
+                        <div class="story_top">
+                            <div class="story_avatar"><img src="https://images.unsplash.com/photo-1605369572399-05d8d64a0f6e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGdpcmxzJTIwaW1hZ2VzfGVufDB8fDB8fHww" /></div>
+                        </div>
+                        <div class="story_middle"></div>
+                        <div class="story_bottom">John Doe</div>
+                    </div>
+                    <div class="story" style="background-image: url(https://images.unsplash.com/photo-1519791883288-dc8bd696e667?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3Rvcnl8ZW58MHx8MHx8fDA%3D);">
+                        <div class="story_top">
+                            <div class="story_avatar"><img src="https://images.unsplash.com/photo-1605369572399-05d8d64a0f6e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGdpcmxzJTIwaW1hZ2VzfGVufDB8fDB8fHww" /></div>
+                        </div>
+                        <div class="story_middle"></div>
+                        <div class="story_bottom">John Doe</div>
+                    </div>
+                    <div class="story" style="background-image: url(https://images.unsplash.com/photo-1519791883288-dc8bd696e667?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3Rvcnl8ZW58MHx8MHx8fDA%3D);">
+                        <div class="story_top">
+                            <div class="story_avatar"><img src="https://images.unsplash.com/photo-1605369572399-05d8d64a0f6e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGdpcmxzJTIwaW1hZ2VzfGVufDB8fDB8fHww" /></div>
+                        </div>
+                        <div class="story_middle"></div>
+                        <div class="story_bottom">John Doe</div>
+                    </div>
+                </div>
+
+                <div class="posts">
+                    <div class="post">
+                        <div class="post_author">
+                            <div class="post_author_avatar"><img src="https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D" /></div>
+                            <div class="post_author_details">
+                                <h4>Stree Free Quotes</h4>
+                                <p>Behroz Shah. 2h</p>
+                            </div>
+                        </div>
+                        <div class="post_description">
+                            <p>Life in a village</p>
+                            <p>#VillageLife #Village</p>
+                            <img src="https://ecotourism-world.com/wp-content/uploads/2020/04/fisherman-4391649_960_720-1.jpg" />
+                        </div>
+                        <hr>
+                        <div class="post_actions">
+                            <div class="post_action_item">
+                                <i class="fa-solid fa-thumbs-up"></i> Like
+                            </div>
+                            <div class="post_action_item">
+                                <i class="fa-solid fa-message"></i> Comment
+                            </div>
+                            <div class="post_action_item">
+                                <i class="fa-solid fa-share"></i> Share
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right_sidebar">
+                <div class="friend-requests">
+                    <h4>Friend Requests <a href="#">See all</a></h4>
+                    <div>
+                        <div class="friend-requests_item">
+                            <div class="friend_request_avatar">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z2lybHMlMjBpbWFnZXN8ZW58MHx8MHx8fDA%3D" />
+                            </div>
+                            <div class="friend-requests_item_name">
+                                <p>Diana Doe</p>
+                                <div class="friend-requests_item_buttons">
+                                    <button style="background-color: #0064d1; color: white;">Confirm</button>
+                                    <button>Delete</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="friend-requests_item">
+                            <div class="friend_request_avatar">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z2lybHMlMjBpbWFnZXN8ZW58MHx8MHx8fDA%3D" />
+                            </div>
+                            <div class="friend-requests_item_name">
+                                <p>Roma Doe</p>
+                                <div class="friend-requests_item_buttons">
+                                    <button style="background-color: #0064d1; color: white;">Confirm</button>
+                                    <button>Delete</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr />
+
+                <div class="birthdays">
+                    <h4>Birthdays</h4>
+                    <div>
+                        <div class="birthday_item">
+                            <i class="fa-solid fa-gift"></i>
+                            <p>Someone's birthday is today.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <hr />
+
+                <div class="contacts">
+                    <h4>Contact</h4>
+                    <div class="contact_items">
+                        <div class="contact_item">
+                            <div class="contact_item_avatar">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z2lybHMlMjBpbWFnZXN8ZW58MHx8MHx8fDA%3D" />
+                            </div>
+                            <p>John Doe</p>
+                        </div>
+                        <div class="contact_item">
+                            <div class="contact_item_avatar">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z2lybHMlMjBpbWFnZXN8ZW58MHx8MHx8fDA%3D" />
+                            </div>
+                            <p>John Doe</p>
+                        </div>
+                        <div class="contact_item">
+                            <div class="contact_item_avatar">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z2lybHMlMjBpbWFnZXN8ZW58MHx8MHx8fDA%3D" />
+                            </div>
+                            <p>John Doe</p>
+                        </div>
+                        <div class="contact_item">
+                            <div class="contact_item_avatar">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z2lybHMlMjBpbWFnZXN8ZW58MHx8MHx8fDA%3D" />
+                            </div>
+                            <p>John Doe</p>
+                        </div>
+                        <div class="contact_item">
+                            <div class="contact_item_avatar">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z2lybHMlMjBpbWFnZXN8ZW58MHx8MHx8fDA%3D" />
+                            </div>
+                            <p>John Doe</p>
+                        </div>
+                        <div class="contact_item">
+                            <div class="contact_item_avatar">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z2lybHMlMjBpbWFnZXN8ZW58MHx8MHx8fDA%3D" />
+                            </div>
+                            <p>John Doe</p>
+                        </div>
+                        <div class="contact_item">
+                            <div class="contact_item_avatar">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z2lybHMlMjBpbWFnZXN8ZW58MHx8MHx8fDA%3D" />
+                            </div>
+                            <p>John Doe</p>
+                        </div>
+                        <div class="contact_item">
+                            <div class="contact_item_avatar">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z2lybHMlMjBpbWFnZXN8ZW58MHx8MHx8fDA%3D" />
+                            </div>
+                            <p>John Doe</p>
+                        </div>
+                        <div class="contact_item">
+                            <div class="contact_item_avatar">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z2lybHMlMjBpbWFnZXN8ZW58MHx8MHx8fDA%3D" />
+                            </div>
+                            <p>John Doe</p>
+                        </div>
+                        <div class="contact_item">
+                            <div class="contact_item_avatar">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z2lybHMlMjBpbWFnZXN8ZW58MHx8MHx8fDA%3D" />
+                            </div>
+                            <p>John Doe</p>
+                        </div>
+                        <div class="contact_item">
+                            <div class="contact_item_avatar">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z2lybHMlMjBpbWFnZXN8ZW58MHx8MHx8fDA%3D" />
+                            </div>
+                            <p>John Doe</p>
+                        </div>
+                        <div class="contact_item">
+                            <div class="contact_item_avatar">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z2lybHMlMjBpbWFnZXN8ZW58MHx8MHx8fDA%3D" />
+                            </div>
+                            <p>John Doe</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>

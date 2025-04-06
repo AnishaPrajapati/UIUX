@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+
+    <!-- Font awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    html,
+    body {
+        color: #5b5b5b;
+        position: relative;
+    }
+    
+    header {
+        position: sticky;
+    }
+    
+    nav,
+    ul,
+    .navlinks {
+        display: flex;
+        align-items: center;
+    }
+    
+    div {
+        padding: 16px;
+    }
+    
+    p {
+        margin: 8px 0;
+    }
+    
+    nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 8px 64px;
+    }
+    
+    ul {
+        text-decoration: none;
+        list-style-type: none;
+        width: 100%;
+    }
+    
+    a {
+        text-decoration: none;
+        color: black;
+        align-items: end;
+        justify-content: space-between;
+    }
+    
+    button {
+        padding: 8px 12px;
+        border: none;
+        background-color: #33333380;
+        color: white;
+    }
+    
+    .nav-left {
+        display: flex;
+        flex-direction: row;
+        gap: 64px;
+    }
+    
+    .nav-right {
+        display: flex;
+        flex-direction: row;
+        gap: 24px;
+    }
+    
+    .nav-menu-items {
+        display: flex;
+        flex-direction: row;
+        gap: 32px;
+    }
+    
+    .home {
+        display: block;
+        text-align: center;
+        background-color: #ddd;
+        width: 100%;
+        font-size: 20px;
+    }
+    
+    .login_form {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .form {
+        background-color: #f3f3f3;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 50%;
+        padding: 16px;
+    }
+    
+    .form input {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 16px;
+        border: none;
+    }
+    
+    footer {
+        background-color: #ddd;
+        display: flex;
+        padding: 64px;
+        gap: 24px;
+    }
+    
+    .leftside {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 24px;
+        width: 50%;
+    }
+    
+    .leftside .leftside-list {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        align-items: start;
+    }
+    
+    .rightside {
+        display: flex;
+        align-items: start;
+        width: 50%;
+    }
+    
+    .rightside .rightside-item {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .rightside .rightside-item ul {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        list-style: circle;
+        gap: 12px;
+        margin-left: 16px;
+    }
+    
+    .information {
+        flex-direction: column;
+        list-style-type: circle;
+    }
+    
+    .infolinks {
+        flex-direction: column;
+        list-style-type: circle;
+    }
+    
+    .support {
+        flex-direction: column;
+        list-style-type: circle;
+    }
+</style>
+
+<body>
+    <header>
+        <nav>
+            <div class="nav-left">
+                <div class="logo">
+                    <img src="https://nokshi-2.myshopify.com/cdn/shop/files/booken-logo_150x.png?v=1615364709" alt="logo">
+                </div>
+                <ul class="nav-menu-items">
+                    <li>Home</li>
+                    <li>About Us</li>
+                    <li>Shop</li>
+                    <li>Blog</li>
+                    <li>Contact Us</li>
+                </ul>
+            </div>
+
+            <div class="nav-right">
+                <a href=""> <i class="fa-solid fa-magnifying-glass"></i></a>
+                <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href=""><i class="fa-solid fa-gear"></i></a>
+            </div>
+        </nav>
+
+    </header>
+
+    <main>
+        <div class="home">
+            Home/Create Account
+        </div>
+        <div class="login_form">
+
+            <form action="" method="post" class="form">
+                <div style="text-align: center;">
+                    <h2>Create Account</h2>
+                    <p>Please Register using account detail below</p>
+                </div>
+
+                <div>
+                    <input type="text" placeholder="First Name" />
+
+                    <input type="text" placeholder="Last Name" />
+                    <input type="text" placeholder="Email" />
+
+                    <input type="text" placeholder="Password" />
+
+
+                </div>
+
+                <div>
+                    <button class="button" type="submit"> Create </button>
+                </div>
+
+                <div>
+                    <p href="">
+                        Return to store
+                    </p>
+                </div>
+
+            </form>
+        </div>
+    </main>
+    <footer>
+        <div class="leftside">
+            <h3>ABOUT INFO</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor inci ut labore et dolore.
+            </p>
+            <ul class="leftside-list">
+                <li>
+                    <i class="fa-solid fa-location-dot"></i> &nbsp; Addresss: 123 Pall Mall, London England
+                </li>
+                <li>
+                    <i class="fa-solid fa-envelope"></i> &nbsp; Email: hello@example.com
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-phone"></i> &nbsp; Phone: (012) 345 6789
+                </li>
+            </ul>
+        </div>
+
+        <div class="rightside">
+            <div class="rightside-item">
+                <h3>INFORMATION</h3>
+                <ul>
+                    <li>Sign In</li>
+                    <li>View Cart</li>
+                    <li>My Whishlist</li>
+                    <li>Track My Order</li>
+                    <li>Help</li>
+                </ul>
+            </div>
+
+            <div class="rightside-item">
+                <h3>INFO LINKS </h3>
+                <ul>
+                    <li>Home</li>
+                    <li>About Us </li>
+                    <li>Shop</li>
+                    <li>Blog</li>
+                    <li>Contact Us</li>
+                </ul>
+            </div>
+
+            <div class="rightside-item">
+                <h3>SUPPORT AREA</h3>
+                <ul>
+                    <li>Hello & Support</li>
+                    <li>Shipping & Tax</li>
+                    <li>Return Policy</li>
+                    <li>Affilates</li>
+                    <li>Legal Notice</li>
+                </ul>
+            </div>
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>
