@@ -1,0 +1,109 @@
+@font-face {
+    font-family: MyCustomFont;
+    src: url('./fonts/regards.ttf');
+}
+
+body {
+    background-color: #f0d09a;
+    /* color: #f0d09a; */
+    font-family: 'MyCustomFont', sans-serif;
+}
+
+.logo {
+    font-size: 26px;
+    color: white;
+    font-weight: 600;
+}
+
+span {
+    color: #f0d09a;
+}
+
+nav,
+ul {
+    display: flex;
+    justify-content: space-around;
+    background-color: black;
+    padding: 5px 0;
+    margin: 0 4px;
+    align-items: center;
+    color: #f0d09a;
+}
+
+ul {
+    list-style-type: none;
+    column-gap: 1rem;
+}
+
+.hero_section {
+    background-color: #FAEFDD;
+    text-align: center;
+    position: relative;
+}
+
+.hero_section,
+h1 {
+    font-size: 4rem;
+}
+
+.orbit1 {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.orbit2 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.orbit1 img {
+    animation: rotateorbit1 50s infinite linear;
+}
+
+@keyframes rotateorbit1 {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.orbit2 img {
+    animation: rotateorbit2 50s infinite linear;
+}
+
+@keyframes rotateorbit2 {
+    0% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0);
+    }
+}
+
+.portfolio {
+    background-image: url('https://owltastic.com/img/bg-star-chart-alt.webp');
+    display: grid;
+    grid-template-columns: repeat(3, 200px);
+    justify-content: center;
+    gap: 1rem;
+}
+
+.work {
+    padding: 1rem;
+    background-color: black;
+}
+
+.miniwork {
+    border: 1px solid white;
+    height: 200px;
+    overflow: hidden;
+}
+
+.miniwork img {
+    width: 100%;
+    filter: grayscale();
+}
